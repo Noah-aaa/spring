@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--1.获取bean演示 User类对象创建-->
+<bean id="user" class="com.atguigu.spring6.iocxml.User"></bean>
+<!--2.通过实现类来实现-->
+    <!--一个接口有多个实现类，这些实现类都配置了bean根据接口类型获取bean，不行因为bean不唯一，如果bean唯一就可以实现-->
+<bean id="userDaoImpl" class="com.atguigu.spring6.iocxml.bean.UserDaoImpl"></bean>
+
+</beans>
