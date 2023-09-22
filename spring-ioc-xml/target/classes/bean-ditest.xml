@@ -39,6 +39,7 @@
     <bean id="emp3" class="com.atguigu.spring6.iocxml.ditest.Emp">
         <property name="ename" value="mary"></property>
         <property name="age" value="30"></property>
+<!--        记得要用ref 而不是value-->
         <property name="dept" ref="dept3"></property>
         <property name="dept.dname" value="测试部"></property>
     </bean>

@@ -1,5 +1,6 @@
 package com.atguigu.spring6.iocxml.ditest;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,5 +17,11 @@ public class TestEmp {
         System.out.println(
                 emp.getEname() + emp.getDept().getDname()
         );
+    }
+    @Test
+    public void testEmpArray(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("bean-diarray.xml");
+        Emp emp = context.getBean("emp",Emp.class);
+        emp.work();
     }
 }

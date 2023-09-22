@@ -9,6 +9,16 @@ public class Emp {
     private Dept dept;
     private String ename;
     private Integer age;
+    // 爱好
+    private String[] loves;
+
+    public String[] getLoves() {
+        return loves;
+    }
+
+    public void setLoves(String[] loves) {
+        this.loves = loves;
+    }
 
     public Dept getDept() {
         return dept;
@@ -37,5 +47,6 @@ public class Emp {
     public void work(){
         System.out.println(ename + "emp working....." + age);
         dept.info();
+        System.out.println(getLoves().toString());
     }
 }
