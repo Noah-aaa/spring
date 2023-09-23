@@ -1,5 +1,7 @@
 package com.atguigu.spring6.iocxml.ditest;
 
+import java.util.Arrays;
+
 /**
  * @author longteng
  * @date 2023/9/22 13:08
@@ -47,6 +49,6 @@ public class Emp {
     public void work(){
         System.out.println(ename + "emp working....." + age);
         dept.info();
-        System.out.println(getLoves().toString());
+        System.out.println(Arrays.toString(loves));
     }
 }

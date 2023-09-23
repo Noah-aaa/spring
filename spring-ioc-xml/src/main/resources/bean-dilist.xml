@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="emp" class="com.atguigu.spring6.iocxml.ditest.Emp">
+        <property name="dept" ref="dept"></property>
+        <property name="ename" value="里斯"></property>
+        <property name="age" value="20"></property>
+        <property name="loves">
+            <array>
+                <value>足球</value>
+                <value>篮球</value>
+                <value>羽毛球</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="emp2" class="com.atguigu.spring6.iocxml.ditest.Emp">
+        <property name="dept" ref="dept"></property>
+        <property name="ename" value="里斯"></property>
+        <property name="age" value="20"></property>
+        <property name="loves">
+            <array>
+                <value>足</value>
+                <value>篮</value>
+                <value>羽毛</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="dept" class="com.atguigu.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="网安部门"></property>
+        <property name="empList">
+             <list>
+                 <ref bean="emp"></ref>
+                 <ref bean="emp2"></ref>
+             </list>
+
+        </property>
+    </bean>
+
+</beans>
