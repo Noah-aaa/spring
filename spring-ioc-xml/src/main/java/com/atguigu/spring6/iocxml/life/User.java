@@ -16,7 +16,7 @@ public class User {
     }
     // 销毁的方法
     public void destroyMethod(){
-        System.out.println("5.bean对象销毁，调用指定的销毁方法");
+        System.out.println("7.bean对象销毁，调用指定的销毁方法");
     }
     public String getName() {
         return name;

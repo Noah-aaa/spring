@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="userController" class="com.atguigu.spring6.iocxml.auto.controller.UserController" autowire="byType">-->
+
+<!--    </bean>-->
+<!--&lt;!&ndash;    自动装配根据类型，保证实现类唯一&ndash;&gt;-->
+<!--    <bean id="userService" class="com.atguigu.spring6.iocxml.auto.service.UserServiceImpl" autowire="byType"></bean>-->
+<!--    <bean id="userDao" class="com.atguigu.spring6.iocxml.auto.dao.UserDaoImpl"></bean>-->
+    <bean id="userController" class="com.atguigu.spring6.iocxml.auto.controller.UserController" autowire="byName">
+
+    </bean>
+    <!--    自动装配根据名称，-->
+    <bean id="userService" class="com.atguigu.spring6.iocxml.auto.service.UserServiceImpl" autowire="byName"></bean>
+    <bean id="userDao" class="com.atguigu.spring6.iocxml.auto.dao.UserDaoImpl"></bean>
+</beans>

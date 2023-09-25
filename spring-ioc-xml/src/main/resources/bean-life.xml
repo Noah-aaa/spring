@@ -5,4 +5,5 @@
 <bean id="user" class="com.atguigu.spring6.iocxml.life.User" scope="singleton" init-method="initMethod" destroy-method="destroyMethod">
     <property name="name" value="张三"></property>
 </bean>
+    <bean id="myBeanPost" class="com.atguigu.spring6.iocxml.life.MyBeanPost"></bean>
 </beans>
