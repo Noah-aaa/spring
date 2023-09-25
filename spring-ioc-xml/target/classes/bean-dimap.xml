@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="student" class="com.atguigu.spring6.iocxml.dimap.Student">
+    <property name="sid" value="111110"></property>
+    <property name="sname" value="longt"></property>
+    <property name="teacherMap">
+        <map>
+            <entry>
+                <key>
+                   <value>10000</value>
+                </key>
+                <ref bean="teacherone"></ref>
+            </entry>
+            <entry>
+                <key>
+                    <value>20000</value>
+                </key>
+                <ref bean="teachertwo"></ref>
+            </entry>
+        </map>
+    </property>
+</bean>
+    <bean id="teacherone" class="com.atguigu.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="10"></property>
+        <property name="tname" value="huqianhong"></property>
+    </bean>
+    <bean id="teachertwo" class="com.atguigu.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="50"></property>
+        <property name="tname" value="chaoxiangping"></property>
+    </bean>
+</beans>

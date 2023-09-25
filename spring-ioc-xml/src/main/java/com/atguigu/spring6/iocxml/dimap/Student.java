@@ -1,5 +1,6 @@
 package com.atguigu.spring6.iocxml.dimap;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,6 +12,15 @@ public class Student {
     private String sname;
 
     private Map<String , Teacher> teacherMap;
+    private List<Lesson> lessonList;
+
+    public List<Lesson> getLessonList() {
+        return lessonList;
+    }
+
+    public void setLessonList(List<Lesson> lessonList) {
+        this.lessonList = lessonList;
+    }
 
     public Map<String, Teacher> getTeacherMap() {
         return teacherMap;
@@ -23,6 +33,7 @@ public class Student {
     public void run() {
         System.out.println(sid+"Student类run...."+sname);
         System.out.println(teacherMap);
+        System.out.println(lessonList);
     }
     public String getSid() {
         return sid;
