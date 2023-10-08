@@ -1,14 +1,17 @@
 package com.atguigu.Bean;
 
 import com.atguigu.anno.Bean;
+import com.atguigu.anno.Di;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author longteng
@@ -47,8 +50,38 @@ public class AnnotationApplicationContext implements ApplicationContext{
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        // 属性注入
+        loadDi();
     }
 
+    private void loadDi() {
+        // 1.实例化对象在beanFactory的map集合里面
+        // 1 遍历beanFactory的map集合
+        Set<Map.Entry<Class,Object>> entries = beanFactory.entrySet();
+        for (Map.Entry<Class,Object> entry : entries) {
+            // 2.获取map集合每个对象（value），每个对象属性获取到
+            Object obj = entry.getValue();
+            // 获取对象clazz
+            Class<?> clazz = obj.getClass();
+            // 获取每个对象属性获取到
+            Field[] declaredFields = clazz.getDeclaredFields();
+            // 3.遍历得到每个对象属性数组，得到每个属性
+            for (Field field : declaredFields) {
+                Di annotation = field.getAnnotation(Di.class);
+                // 4.判断属性上面是否有@Di注解
+                if(annotation != null){
+                    // 如果私有属性，设置可以设置值
+                    field.setAccessible(true);
+                    // 5.如果有@Di注解，把对象进行设置(注入)
+                    try {
+                        field.set(obj,beanFactory.get(field.getType()));
+                    } catch (IllegalAccessException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        }
+    }
     private void loadBean(File file) throws Exception {
         // 1.判断当前是否是文件夹
         if(file.isDirectory()){

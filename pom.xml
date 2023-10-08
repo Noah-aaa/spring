@@ -13,6 +13,12 @@
         <module>spring-ioc-xml</module>
         <module>spring6-ioc-annotation</module>
         <module>atguigu-spring</module>
+        <module>spring6-aop</module>
+        <module>spring6-junit</module>
+        <module>spring-jdbc-tx</module>
+        <module>spring6-resources</module>
+        <module>spring6-i18n</module>
+        <module>spring6-validator</module>
     </modules>
     <dependencies>
         <!--        引入spring context依赖
@@ -22,6 +28,17 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>6.0.2</version>
+        </dependency>
+        <!--spring整合junit相关依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -40,6 +57,18 @@
             <version>2.19.0</version>
         </dependency>
 
+        <!--spring aop依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+        <!--spring aspects依赖-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>6.0.2</version>
+        </dependency>
 
     </dependencies>
 
